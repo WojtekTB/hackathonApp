@@ -32,6 +32,7 @@ function drawPerson(x, y, shirtColor, skinColor, name, sittingBoolien, scale)
   let y1 = y;
   let y2 = y+scale*2;
   let y3 = y+scale*2;
+  
   let context = canvas.getContext('2d');
   context.fillStyle = shirtColor;
   context.strokeStyle = `rgb(0,0,0)`;
