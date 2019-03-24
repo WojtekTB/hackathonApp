@@ -51,13 +51,17 @@
   <body>
     <h1>Event Management Website</h1>
     <h1>Create your Event</h1>
-    <p>Event Name: <input type="text" name="eventName" value=""><br>
-    Estimated number of people: <input type="text" name="attendees" value=""><br>
-    How many people per table: <input type="text" name="attendees" value=""><br>
-    <input type="submit" value="Submit"></p>
-    <h2>Already have an event?</h2>
-    <form method="get" action="Room.html">
+    <form onsubmit="return createEvent2()">
+      <p>Event Name: <input type="text" name="eventName" value=""><br>
+      Estimated number of people: <input type="text" name="attendees" value=""><br>
+      How many people per table: <input type="text" name="attendees" value=""><br>
+      <input type="submit" value="Submit"></p>
+      <h2>Already have an event?</h2>
       <button type="submit"> Click here to view!</button>
     </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="create.js"></script>
   </body>
 </html>
