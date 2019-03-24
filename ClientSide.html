@@ -29,9 +29,19 @@
   <body>
     <h1>Please Enter the <b>Event Code</b>   </h1>
      <form onsubmit = "return submitForm()">
-       <input type="text" name="eventName" id = "eventId" value="">
+       <input type="text" name="eventName" placeholder="event id" id = "eventId" value="">
+     </form>
+     <form onsubmit = "return submitForm()">
+       <input type="text" name="eventName" placeholder="name" id = "name" value="">
        <input type="submit" value="Submit">
      </form>
+     <select name="shirt color">
+       <option value="red"></option>
+       <option value="green"></option>
+       <option value="blue"></option>
+       <option value="brown"></option>
+       <option value="yellow"></option>
+     </select>
   </body>
 
 
@@ -41,9 +51,9 @@
     function submitForm()
     {
       const eventId = document.getElementById("eventId").value;
-
-      checkIn(eventId, '1,', '2', '3'); // called asynbchronialsicoly
-
+      const name = document.getElementById("name").value;
+      alert("Checked in!");
+      checkIn(eventId, name, '2', '3'); // called asynbchronialsicoly
       return false;
     }
 
@@ -56,7 +66,9 @@
         alert('Could not find an event with that id, pls try again pls pls');
       } else {
         // User is logged in or whatever
-        guestList.push(eid, );
+        guestNameList.push(name);
+        guestShirtColorList.push(shirtColor);
+        guestSkinColorList.push(skinColor);
         console.log(data.eventId);
       }
 

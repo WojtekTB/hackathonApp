@@ -38,6 +38,7 @@ function drawPerson(x, y, shirtColor, skinColor, name, sittingBoolien, scale)
   triangle(x1, y1, x2, y2, x3, y3);
   context.fillStyle = skinColor;
   circle(x1, y1, scale*0.6);
+  text(name, x1 - (name.length)/2*6, y1 - scale);
 }
 
 // function personMove(direction)
