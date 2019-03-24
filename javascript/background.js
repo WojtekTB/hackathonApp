@@ -1,5 +1,5 @@
-var screenWidth = screen.width;
-var screenHeight = screen.height;
+var screenWidth = window.innerWidth;
+var screenHeight = window.innerHeight;
 var randomFloorPattern = [];
 var randomTablePattern = [];
 var firstRun;
