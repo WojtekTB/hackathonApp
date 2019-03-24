@@ -27,11 +27,14 @@ function populateWithTables(difX, difY, stagger)
     for(let x = 0; x < ((screenWidth - 200) / difX); x++)
     {
       drawTable(startX+randomTablePattern[x], startY + randomTablePattern[j]/2, 40);
+      openChairXList.push(startX+randomTablePattern[x]);
+      openChairYList.push(startY + randomTablePattern[j]/2);
       startX += difX;
       j++;
     }
     startY = startY+difY;
     startX = 40;
+    updateLocalStorage();
   }
 }
 
@@ -72,12 +75,8 @@ function drawLine(x1, y1, x2, y2, color)
 {
   var context = canvas.getContext('2d');
   context.strokeStyle = color;
-  // Reset the current path
   context.beginPath();
-  // Staring point (x1,y1)
    context.moveTo(x1, y1);
-  // End point (x2,x1)
   context.lineTo(x2, y2);
-  // Make the line visible
   context.stroke();
 }
