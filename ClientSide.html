@@ -33,15 +33,12 @@
      </form>
      <form onsubmit = "return submitForm()">
        <input type="text" name="eventName" placeholder="name" id = "name" value="">
+     </form>
+     <form onsubmit = "return submitForm()">
+       <input type="text" name="eventName" placeholder="shirt color(blue, red, green)" id = "sColor" value="">
        <input type="submit" value="Submit">
      </form>
-     <select name="shirt color">
-       <option value="red"></option>
-       <option value="green"></option>
-       <option value="blue"></option>
-       <option value="brown"></option>
-       <option value="yellow"></option>
-     </select>
+
   </body>
 
 
@@ -52,20 +49,21 @@
     {
       const eventId = document.getElementById("eventId").value;
       const name = document.getElementById("name").value;
+      const shirtColor = document.getElementById("sColor").value;
       alert("Checked in!");
-      checkIn(eventId, name, '2', '3'); // called asynbchronialsicoly
+      checkIn(eventId, name, shirtColor, '3'); // called asynbchronialsicoly
       return false;
     }
 
     async function checkIn(eid, name, shirtColor, skinColor) {
-      const data = await checkInToEvent(eid, name, shirtColor, skinColor)
+      const data = await checkInToEvent(eid, name, shirtColor, '0');
 
       // if data is false, we didn't find an event...
 
       if (!data) {
         alert('Could not find an event with that id, pls try again pls pls');
       } else {
-        // User is logged in or whatever
+        // User is logged in or whatever needs local data
         guestNameList.push(name);
         guestShirtColorList.push(shirtColor);
         guestSkinColorList.push(skinColor);
